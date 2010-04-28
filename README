@@ -1,0 +1,31 @@
+To work needs a configuration file 'eport.yml'
+Сonfiguration file must be located in the directory 'config'.
+
+Example: config/eport.yml
+
+:eport:
+  :point: "your point number"
+  :private_key_path: "path relative RAILS_ROOT"
+  :host: "e-port host"
+
+
+Operations.
+
+You can do the following operations:
+1) CHECK
+2) OPERATION
+3) CONFIRM
+4) CANCEL
+
+
+The first four operations are performed as follows:
+
+eport = Eport.new
+eport.refill_operation(operation_name, operation_id, product_id, value, account)
+
+where operations_name can take the following values: :confirm, :check, :operation and :cancel
+
+Catalog.
+
+eport = Eport.new
+eport.get_catalog
