@@ -17,7 +17,6 @@ You can do the following operations:
 3) CONFIRM
 4) CANCEL
 
-
 The first four operations are performed as follows:
 
 eport = Eport.new
