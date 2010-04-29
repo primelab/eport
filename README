@@ -28,3 +28,8 @@ Catalog.
 
 eport = Eport.new
 eport.get_catalog
+
+Balance.
+
+eport = Eport.new
+eport.get_balance

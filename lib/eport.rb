@@ -22,6 +22,19 @@ class Eport
     cp.new_catalog(data)    
   end  
   
+  def get_balance
+     req = Request.new do |r|
+       r.point = @config[:eport][:point]
+       r.private_key_path = "#{RAILS_ROOT}/#{@config[:eport][:private_key_path]}"
+
+       r.host = @config[:eport][:host]
+       r.path = "/cp/bal"
+       r.body = ""
+     end
+      ic = Iconv.new('UTF-8', 'WINDOWS-1251')
+      ic.iconv(req.confirm)    
+   end
+  
   def refill_operation(operation_name, operation_id, product_id, value, account)
      req = Request.new do |r|
      r.point = @config[:eport][:point]
