@@ -9,11 +9,12 @@ h2. Using inside Rails
 
 To use *eport* gem inside Rails you must have @eport/config.yml@ file, which must looks like this:
 
-pre.
+<pre>
   :eport:
     :point: "your point number"
     :private_key_path: "path relative RAILS_ROOT"
     :host: "e-port host"
+</pre>
   
 Then, inside your Rails app you can use eport for making several types of operations:
 
