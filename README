@@ -1,35 +1,44 @@
-To work needs a configuration file 'eport.yml'
-Сonfiguration file must be located in the directory 'config'.
+== Installation
 
-Example: config/eport.yml
+To install *eport* gem just do this:
+
+  gem install eport
+
+  
+== Using inside Rails
+
+To use *eport* gem inside Rails you must have @eport/config.yml@ file, which must looks like this:
 
 :eport:
   :point: "your point number"
   :private_key_path: "path relative RAILS_ROOT"
   :host: "e-port host"
-
-
-Operations.
-
-You can do the following operations:
-1) CHECK
-2) OPERATION
-3) CONFIRM
-4) CANCEL
-
-The first four operations are performed as follows:
+  
+Then, inside your Rails app you can use eport for making several types of operations:
 
 eport = Eport.new
 eport.refill_operation(operation_name, operation_id, product_id, value, account)
 
-where operations_name can take the following values: :confirm, :check, :operation and :cancel
 
-Catalog.
+== Supported operations
+
+You can do the following operations:
+
+* CHECK
+* OPERATION
+* CONFIRM
+* CANCEL
+
+
+== Additional functionality
+
+Fetching catalog of *eport* service providers:
 
 eport = Eport.new
 eport.get_catalog
 
-Balance.
+
+Fetching *eport* balance
 
 eport = Eport.new
 eport.get_balance
