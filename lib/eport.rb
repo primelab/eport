@@ -30,10 +30,9 @@ class Eport
   
   def get_catalog
     req = Request.new do |r|
-      r.point = @config[:eport][:point]
-      r.private_key_path = "#{RAILS_ROOT}/#{@config[:eport][:private_key_path]}"
-
-      r.host = @config[:eport][:host]
+      r.point = @ep_point
+      r.private_key_path = @ep_key
+      r.host = @ep_host
       r.path = "/cp/dir"
       r.body = ""
     end
