@@ -2,7 +2,7 @@ h2. Installation
 
 To install *eport* gem just do this:
 
-  gem install eport
+@gem install eport@
 
   
 h2. Using inside Rails
@@ -10,16 +10,18 @@ h2. Using inside Rails
 To use *eport* gem inside Rails you must have @eport/config.yml@ file, which must looks like this:
 
 <pre>
-  :eport:
-    :point: "your point number"
-    :private_key_path: "path relative RAILS_ROOT"
-    :host: "e-port host"
+:eport:
+  :point: "your point number"
+  :private_key_path: "path relative RAILS_ROOT"
+  :host: "e-port host"
 </pre>
   
 Then, inside your Rails app you can use eport for making several types of operations:
 
+<pre>
 eport = Eport.new
 eport.refill_operation(operation_name, operation_id, product_id, value, account)
+</pre>
 
 
 h2. Supported operations
@@ -36,11 +38,15 @@ h2. Additional functionality
 
 Fetching catalog of *eport* service providers:
 
+<pre>
 eport = Eport.new
 eport.get_catalog
+</pre>
 
 
 Fetching *eport* balance
 
+<pre>
 eport = Eport.new
 eport.get_balance
+</pre>
