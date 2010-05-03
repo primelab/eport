@@ -6,7 +6,7 @@ class Request
   attr_accessor :point, :private_key_path, :host, :path, :additional_headers, :body
 
   def initialize(&block)
-    block.yield(self)
+    yield self if block_given?
 
     @headers = {
       "Content-Type"   => "text/plain; charset=Windows-1251",
