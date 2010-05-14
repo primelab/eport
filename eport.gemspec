@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s| 
   s.name = "eport"
-  s.version = "0.0.1.1"
+  s.version = "0.0.3"
   s.author = "Alexander Lomakin, Dmitry Andreev"
   s.email = "d.g.andreev@gmail.com"
   s.homepage = ""

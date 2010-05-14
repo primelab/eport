@@ -56,7 +56,8 @@ class Eport
     end
 
     ic = Iconv.new('UTF-8', 'WINDOWS-1251')
-    ic.iconv(req.confirm)
+    res = ic.iconv(req.confirm).split("RESULT\r\n")[1..-1].collect{|o| Hash[o.split("\r\n").collect{|o| o.split("=")}].symbolize_keys}
+    res.inject({}){|h,o| h = o if o[:id] == operation_id.to_s ;h}
    end
   
   
